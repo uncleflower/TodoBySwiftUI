@@ -40,7 +40,15 @@ struct TodoList: View {
                     
                     
                 }
+                
+                NavigationLink(
+                    destination: DeleteTodo().environmentObject(self.userDate
+                    )){
+                    Text("回收站")
+                }
+                
             }
+            
             .navigationBarTitle(Text("任务清单"))
             .navigationBarItems(trailing:
             Button(action:{self.showAdd.toggle()}) {
@@ -49,8 +57,9 @@ struct TodoList: View {
                     .padding(.top)
                 }
             )
-            .sheet(isPresented: $showAdd) {
-                Text("hello")
+                .sheet(
+                    isPresented: $showAdd) {
+                AddTodo(isPresented: self.$showAdd).environmentObject(self.userDate)
             }
         }
     }
@@ -58,6 +67,10 @@ struct TodoList: View {
 
 struct TodoList_Previews: PreviewProvider {
     static var previews: some View {
-        TodoList().environmentObject(UserData())
+        Group{
+            TodoList().environment(\.colorScheme, .dark)
+            TodoList()
+        }
+        .environmentObject(UserData())
     }
 }

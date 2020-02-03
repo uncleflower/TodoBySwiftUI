@@ -16,8 +16,4 @@ struct Todo:Identifiable {
     var isDeleted: Bool
 }
 
-var todos = [
-    Todo(name: "炸学校", checked: true, important: false, isDeleted: false),
-    Todo(name: "吃大象", checked: false, important: false, isDeleted: false),
-    Todo(name: "开飞机", checked: false, important: true, isDeleted: false)
-]
+var todos = [Todo]()
