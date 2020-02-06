@@ -49,7 +49,7 @@ struct TodoList: View {
                 
             }
             
-            .navigationBarTitle(Text("任务清单"))
+            .navigationBarTitle(Text("任务清单"),displayMode: .large)
             .navigationBarItems(trailing:
             Button(action:{self.showAdd.toggle()}) {
                 Image(systemName: "plus.square")

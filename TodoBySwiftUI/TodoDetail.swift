@@ -57,6 +57,11 @@ struct TodoDetail: View {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("删除")
+                    .padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .frame(height: 40)
+                    .cornerRadius(10)
             }
             Spacer()
         }
